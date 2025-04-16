@@ -23,7 +23,7 @@ Date of finished: 16.04.2025
 ## Ход работы
 
 1) Для выполнения первой работы был приобретен сервер на базе платформы Selectel с конфигурацией: 1 CPU, 32 ГБ SSD-диск, публичный ip-адрес:
-   <img src="./images/server.jpg" style="width:500px; height: auto; background: white">
+<img src="./images/server.jpg" style="width:500px; height: auto; background: white">
 
 2) Затем на сервере была выполнена установка Ansible
 3) Также был настроен OpenVPN сервер(```sudo apt install -y openvpn openvpn-systemd-resolved easy-rsa```) со следующей конфигурацией:
@@ -67,16 +67,16 @@ explicit-exit-notify 1
 ```
 
 4) Запускаем сервер:
-   <img src="./images/status.jpg" style="width:500px; height: auto; background: white">
+<img src="./images/status.jpg" style="width:500px; height: auto; background: white">
    
 5) Далее необходимо было настроить openvpn-client для MicroTik в VirtualBox на локальной машине(предварительно перенеся файлы(ca.crt, user01.crt, user01.key) с помощью scp с сервера на виртуалку и импортировать их через /certificate import):
-   <img src="./images/Mikrotik.jpg" style="width:500px; height: auto; background: white">
+<img src="./images/Mikrotik.jpg" style="width:500px; height: auto; background: white">
    
    В результате была получена следующая схема взаимодействия устройств:
-   <img src="./images/shema.png" style="width:500px; height: auto; background: white">
+<img src="./images/shema.png" style="width:500px; height: auto; background: white">
 
 6) Подключение к OpenVPN в MicroTik:
-   <img src="./images/terminal.jpg" style="width:500px; height: auto; background: white">
+<img src="./images/terminal.jpg" style="width:500px; height: auto; background: white">
 
 7) Пинги внутри туннеля между клиентом и сервером:
 
