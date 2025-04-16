@@ -18,7 +18,7 @@ Date of finished: 16.04.2025
 
 # Отчёт по лабораторной работе №1 "Установка CHR и Ansible, настройка VPN"
 
-***Цель:*** Целью данной работы является развертывание виртуальной машины на базе платформы Microsoft Azure с установленной системой контроля конфигураций Ansible и установка CHR в VirtualBox
+***Цель:*** Целью данной работы является развертывание виртуальной машины на базе платформы Microsoft Azure с установленной системой контроля конфигураций Ansible и установка CHR в VirtualBox.
 
 ## Ход работы
 
@@ -67,4 +67,27 @@ explicit-exit-notify 1
 ```
 
 4) Запускаем сервер:
-    <img src="./images/status.jpg" style="width:500px; height: auto; background: white">
+   <img src="./images/status.jpg" style="width:500px; height: auto; background: white">
+   
+5) Далее необходимо было настроить openvpn-client для MicroTik в VirtualBox на локальной машине(предварительно перенеся файлы(ca.crt, user01.crt, user01.key) с помощью scp с сервера на виртуалку и импортировать их через /certificate import):
+   <img src="./images/Mikrotik.jpg" style="width:500px; height: auto; background: white">
+   
+   В результате была получена следующая схема взаимодействия устройств:
+   <img src="./images/shema.png" style="width:500px; height: auto; background: white">
+
+6) Подключение к OpenVPN в MicroTik:
+   <img src="./images/terminal.jpg" style="width:500px; height: auto; background: white">
+
+7) Пинги внутри туннеля между клиентом и сервером:
+
+SERVER --> CLIENT
+
+<img src="./images/pingServer.jpg" style="width:500px; height: auto; background: white">
+
+CLIENT --> SERVER
+
+<img src="./images/pingMikrotik.jpg" style="width:500px; height: auto; background: white">
+
+###  Вывод
+
+В результате выполнения первой лабораторной работы было осуществлено развертывание виртуальной машины на базе платформы Microsoft Azure с установленной системой контроля конфигураций Ansible и была выполнена установка CHR в VirtualBox
