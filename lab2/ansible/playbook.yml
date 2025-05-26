@@ -1,0 +1,33 @@
+---
+- name: mikrotik
+  hosts: all
+  tasks:
+  - name: Change user password
+    community.routeros.command:
+    commands:
+    - /user set admin password={{new_password}}
+
+  - name: set NTP
+    community.routeros.command:
+    commands:
+        - /system ntp server set enabled=yes primary-ntp={{ntp}}
+
+  - name: set OSPF
+    community.routeros.command:
+    commands:
+    - /routing ospf instance add name=default
+    - /interface bridge add name=loopback
+    - /ip address add address={{ospf_router_id}} interface=loopback
+    - /routing ospf instance set 0 router-id={{ospf_router_id}}
+    - /routing ospf area add instance=default name=backbone
+    - /routing ospf interface-template add area=backbone interfaces=ether1 type=ptp
+
+  - name: Get full configuration
+    community.routeros.command:
+    commands:
+        - /export
+    register: full_config
+
+  - name: Print full configuration
+    ansible.builtin.debug:
+    var: full_config
