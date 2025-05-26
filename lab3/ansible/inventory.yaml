@@ -1,0 +1,31 @@
+all:
+  vars:
+    ntp: 194.190.168.1
+  hosts:
+    CHR1:
+      ansible_host: 10.50.154.2
+      ansible_user: admin
+      ansible_password: admin1
+      ansible_connection: ssh
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+      password: admin1
+      new_password: admin1
+      ospf_router_id: 1.1.1.1
+      ansible_remote_tmp: /tmp
+      ansible_connection: network_cli
+      ansible_network_os: routeros
+      netbox_id: 1
+    CHR2:
+      ansible_host: 10.117.191.2
+      ansible_user: admin
+      ansible_password: admin2
+      ansible_connection: ssh
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+      password: admin
+      new_password: admin2
+      ospf_router_id: 2.2.2.2
+      ansible_remote_tmp: /tmp
+      ansible_connection: network_cli
+      ansible_network_os: routeros
+      netbox_id: 2
+

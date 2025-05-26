@@ -1,0 +1,28 @@
+---
+- name: Fetch Info from NetBox
+  hosts: all
+  gather_facts: false
+  vars:
+   netbox_url: "http://10.8.0.2:8000"
+   netbox_token: "f2e653157a85af12d2cdc87ad9032b802affe31d"
+
+  tasks:
+    - name: Fetch Info
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices/{{ netbox_id }}"
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+        method: GET
+        return_content: yes
+        validate_certs: false
+      register: data
+
+    - name: Json to dict
+      set_fact:
+        device: "{{ data.content | from_json }}"
+
+    - name: Change Name and IP
+      community.routeros.command:
+        commands:
+          - /system identity set name={{ device.name }}
+          - /ip address add address={{ device.primary_ip.address }} interface=netbox disabled=no

@@ -1,0 +1,33 @@
+---
+- name: Fetch Info from NetBox
+  hosts: all
+  gather_facts: false
+  vars:
+   netbox_url: "http://10.8.0.2:8000"
+   netbox_token: "f2e653157a85af12d2cdc87ad9032b802affe31d"
+
+
+  tasks:
+    - name: Get system
+      community.routeros.command:
+        commands:
+          - /system license print
+      register: serial_output
+
+    - name: Get serial nuber
+      set_fact:
+        serial_number: "{{ serial_output.stdout_lines[0][0] | regex_search('system-id: (\\S+)','\\1') }}"
+
+    - name: PATCH NETBOX Serial Number
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices/{{ netbox_id }}/"
+        method: PATCH
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+          Content-Type: "application/json"
+        body:
+          serial: "{{ serial_number[0] | string }}"
+        body_format: json
+        validate_certs: no
+      register: update_response
+    

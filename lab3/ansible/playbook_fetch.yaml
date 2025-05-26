@@ -1,0 +1,23 @@
+---
+- name: Fetch Info from NetBox
+  hosts: localhost
+  gather_facts: false
+  vars:
+   netbox_url: "http://10.8.0.2:8000"
+   netbox_token: "f2e653157a85af12d2cdc87ad9032b802affe31d"
+
+  tasks:
+    - name: Fetch info
+      uri:
+        url: "{{ netbox_url }}/api/dcim/devices"
+        headers:
+          Authorization: "Token {{ netbox_token }}"
+        method: GET
+        return_content: yes
+        validate_certs: false
+      register: device_data
+
+    - name: Create file data
+      copy:
+        content: "{{ device_data.json | to_nice_json }}"
+        dest: "devices.json"
