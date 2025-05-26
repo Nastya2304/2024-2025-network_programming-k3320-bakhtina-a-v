@@ -1,20 +1,26 @@
-# LAB 2
+University: [ITMO University](https://itmo.ru/ru/)
 
-University: [ITMO University](https://itmo.ru/ru/)  
-Faculty: [FICT](https://fict.itmo.ru)  
-Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)  
-Year: 2024/2025  
-Group: K3320  
-Author: Bakhtina Anastasia Viacheslavovna  
-Lab: Lab2  
-Date of create: 12.05.2025  
-Date of finished: 16.05.2025
+Faculty: [FICT](https://fict.itmo.ru)
 
-## Цель
+Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)
 
-Развернуть второй CHR. Настроить конфигурацию посредством ansible.
+Year: 2024/2025
 
-## Выполнение
+Group: K3320
+
+Author: Bakhtina Anastasia Viacheslavovna
+
+Lab: Lab2
+
+Date of create: 23.05.2025
+
+Date of finished: 24.05.2025
+
+# Отчёт по лабораторной работе №2 "Развертывание дополнительного CHR, первый сценарий Ansible"
+
+***Цель:*** С помощью Ansible настроить несколько сетевых устройств и собрать информацию о них. Правильно собрать файл Inventory.
+
+## Ход работы
 
 1. Был развернут второй CHR.
 
@@ -105,11 +111,11 @@ _Полученные конфигурации_
         "changed": true,
         "failed": false,
         "stdout": [
-            "# 2024-10-18 17:24:39 by RouterOS 7.16\n# software id = \n#\n/interface bridge\nadd name=loopback\n/interface ovpn-client\nadd certificate=openvpn cipher=aes256-cbc connect-to=31.129.35.149 \\\n    mac-address=02:8A:61:A8:01:2C name=ovpn-out1 port=26198 user=\\\n    mikrotik26198\n/routing ospf instance\nadd disabled=no name=default router-id=1.1.1.1\n/routing ospf area\nadd disabled=no instance=default name=backbone\n/ip address\nadd address=1.1.1.1 interface=loopback network=1.1.1.1\n/ip dhcp-client\nadd interface=ether1\n/routing ospf interface-template\nadd area=backbone disabled=no interfaces=ether1 type=ptp\n/system note\nset show-at-login=no\n/system ntp client\nset enabled=yes\n/system ntp client servers\nadd address=194.190.168.1"
+            "# 2025-05-23 17:24:39 by RouterOS 7.16\n# software id = \n#\n/interface bridge\nadd name=loopback\n/interface ovpn-client\nadd certificate=openvpn cipher=aes256-cbc connect-to=31.129.35.149 \\\n    mac-address=02:8A:61:A8:01:2C name=ovpn-out1 port=26198 user=\\\n    mikrotik26198\n/routing ospf instance\nadd disabled=no name=default router-id=1.1.1.1\n/routing ospf area\nadd disabled=no instance=default name=backbone\n/ip address\nadd address=1.1.1.1 interface=loopback network=1.1.1.1\n/ip dhcp-client\nadd interface=ether1\n/routing ospf interface-template\nadd area=backbone disabled=no interfaces=ether1 type=ptp\n/system note\nset show-at-login=no\n/system ntp client\nset enabled=yes\n/system ntp client servers\nadd address=194.190.168.1"
         ],
         "stdout_lines": [
             [
-                "# 2024-10-18 17:24:39 by RouterOS 7.16",
+                "# 2025-05-23 17:24:39 by RouterOS 7.16",
                 "# software id = ",
                 "#",
                 "/interface bridge",
@@ -143,11 +149,11 @@ ok: [CHR2] => {
         "changed": true,
         "failed": false,
         "stdout": [
-            "# 2024-10-18 17:24:46 by RouterOS 7.16.1\n# software id = \n#\n/interface bridge\nadd name=loopback\n/interface ovpn-client\nadd certificate=cert2 cipher=aes256-cbc connect-to=31.129.35.149 mac-address=\\\n    02:C2:39:0D:3F:02 name=ovpn-out1 port=20559 user=mikrotik20559\n/routing ospf instance\nadd disabled=no name=default router-id=2.2.2.2\n/routing ospf area\nadd disabled=no instance=default name=backbone\n/ip address\nadd address=2.2.2.2 interface=loopback network=2.2.2.2\n/ip dhcp-client\nadd interface=ether1\n/routing ospf interface-template\nadd area=backbone disabled=no interfaces=ether1 type=ptp\n/system note\nset show-at-login=no"
+            "# 2025-05-23 17:24:46 by RouterOS 7.16.1\n# software id = \n#\n/interface bridge\nadd name=loopback\n/interface ovpn-client\nadd certificate=cert2 cipher=aes256-cbc connect-to=31.129.35.149 mac-address=\\\n    02:C2:39:0D:3F:02 name=ovpn-out1 port=20559 user=mikrotik20559\n/routing ospf instance\nadd disabled=no name=default router-id=2.2.2.2\n/routing ospf area\nadd disabled=no instance=default name=backbone\n/ip address\nadd address=2.2.2.2 interface=loopback network=2.2.2.2\n/ip dhcp-client\nadd interface=ether1\n/routing ospf interface-template\nadd area=backbone disabled=no interfaces=ether1 type=ptp\n/system note\nset show-at-login=no"
         ],
         "stdout_lines": [
             [
-                "# 2024-10-18 17:24:46 by RouterOS 7.16.1",
+                "# 2025-05-23 17:24:46 by RouterOS 7.16.1",
                 "# software id = ",
                 "#",
                 "/interface bridge",
