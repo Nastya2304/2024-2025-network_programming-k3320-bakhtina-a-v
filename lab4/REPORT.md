@@ -1,20 +1,26 @@
-# LAB 4
+University: [ITMO University](https://itmo.ru/ru/)
 
-University: [ITMO University](https://itmo.ru/ru/)  
-Faculty: [FICT](https://fict.itmo.ru)  
-Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)  
-Year: 2024/2025  
-Group: K3320  
-Author: Bakhtina Anastasia Viacheslavovna  
-Lab: Lab4  
-Date of create: 22.05.2024  
-Date of finished: 24.05.2024
+Faculty: [FICT](https://fict.itmo.ru)
 
-## Цель
+Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)
 
-Изучить синтаксис языка программирования P4 и выполнить 2 задания обучающих задания от Open network foundation для ознакомления на практике с P4.
+Year: 2024/2025
 
-## Выполнение
+Group: K3320
+
+Author: Bakhtina Anastasia Viacheslavovna
+
+Lab: Lab4
+
+Date of create: 31.05.2025
+
+Date of finished: 31.05.2025
+
+# Отчёт по лабораторной работе №4 "Базовая 'коммутация' и туннелирование используя язык программирования P4"
+
+***Цель:*** Изучить синтаксис языка программирования P4 и выполнить 2 задания обучающих задания от Open network foundation для ознакомления на практике с P4.
+
+## Ход работы
 
 ### Задание 1
 
