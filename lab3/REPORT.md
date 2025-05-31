@@ -1,20 +1,26 @@
-# LAB 3
+University: [ITMO University](https://itmo.ru/ru/)
 
-University: [ITMO University](https://itmo.ru/ru/)  
-Faculty: [FICT](https://fict.itmo.ru)  
-Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)  
-Year: 2024/2025  
-Group: K3320  
-Author: Bakhtina Anastasia Viacheslavovna  
-Lab: Lab3  
-Date of create: 18.05.2024
-Date of finished: 21.05.2024
+Faculty: [FICT](https://fict.itmo.ru)
 
-## Цель
+Course: [Network programming](https://github.com/itmo-ict-faculty/network-programming)
 
-С помощью Ansible и Netbox собрать всю возможную информацию об устройствах и сохранить их в отдельном файле.
+Year: 2024/2025
 
-## Выполнение
+Group: K3320
+
+Author: Bakhtina Anastasia Viacheslavovna
+
+Lab: Lab3
+
+Date of create: 29.05.2025
+
+Date of finished: 29.05.2025
+
+# Отчёт по лабораторной работе №3 "Развертывание Netbox, сеть связи как источник правды в системе технического учета Netbox"
+
+***Цель:***  С помощью Ansible и Netbox собрать всю возможную информацию об устройствах и сохранить их в отдельном файле.
+
+## Ход работы
 
 1. Был развернут образ Ubuntu в Virtual Box
 
